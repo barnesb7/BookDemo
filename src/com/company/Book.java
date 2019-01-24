@@ -43,12 +43,4 @@ public class Book {
         this.numberOfPages = numberOfPages;
     }
 
-    public int getCopyrightDate() {
-        return copyrightDate;
-    }
-
-    public void setCopyrightDate(int copyrightDate) {
-        this.copyrightDate = copyrightDate;
-    }
-
 }
