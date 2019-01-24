@@ -2,7 +2,6 @@ package com.company;
 
 import java.util.Scanner;
 
-// constructor with paramaters using user input
 // delete a book
 // searched for saved book
 // update a books information
@@ -25,27 +24,33 @@ public class BookDemo {
         library.printNumberOfBooks();
     }else if (userChoice == 2){
 
-      Book newBook = new Book();
-
         messagePrompter.askForTitle();
-        newBook.setTitle(userInput.next());
+        userInput.next();
+        String title = userInput.nextLine();
 
         messagePrompter.askForAuthor();
-        newBook.setAuthor(userInput.next());
+        String author = userInput.nextLine();
 
         messagePrompter.askForNumberOfPages();
-        newBook.setNumberOfPages(userInput.nextInt());
+        int numberOfPages = userInput.nextInt();
 
+
+        Book newBook = new Book(title, author, numberOfPages);
         library.addBookToBookShelf(newBook);
 
-    }else if (userChoice == 3){
+    } else if (userChoice == 3){
+
+    } else if (userChoice == 4){
+
+    } else if (userChoice == 5){
+
+    } else if (userChoice == 6){
+
+    } else if (userChoice == 7){
         continueProgram = false;
     } else {
         messagePrompter.invalidInputPrompt();
     }
-
-
-
 
     }while(continueProgram);
 
