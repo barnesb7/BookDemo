@@ -2,6 +2,11 @@ package com.company;
 
 import java.util.Scanner;
 
+// constructor with paramaters using user input
+// delete a book
+// searched for saved book
+// update a books information
+
 public class BookDemo {
 
     public static void main(String[] args) {
