@@ -10,10 +10,22 @@ public class MessagePrompter {
 
     public void showMenu(){
         System.out.println(welcomePrompt + NEWLINE + seeNumberOfBooksOption + NEWLINE + addBookOption + NEWLINE + exitPrompt);
+
     }
 
     public void invalidInputPrompt() {
         System.out.println("Please input only the digits [1], [2], or [3]");
     }
 
+    public void askForTitle(){
+        System.out.println("What is your book's title?");
+    }
+
+    public void askForAuthor(){
+        System.out.println("Who is your book's author?");
+    }
+
+    public void askForNumberOfPages(){
+        System.out.println("How many pages does your book have?");
+    }
 }

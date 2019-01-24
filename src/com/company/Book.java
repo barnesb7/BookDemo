@@ -7,6 +7,9 @@ public class Book {
     private String author;
     private int numberOfPages;
 
+    public Book(){
+
+    }
 
     public Book(String title, String author, int numberOfPages){
         this.title = title;
