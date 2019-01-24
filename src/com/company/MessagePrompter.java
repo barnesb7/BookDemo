@@ -29,4 +29,8 @@ public class MessagePrompter {
     public void askForNumberOfPages(){
         System.out.println("How many pages does your book have?");
     }
+
+    public void deleteBookPrompt(){
+        System.out.println("What is the title of the book you would like to delete?");
+    }
 }

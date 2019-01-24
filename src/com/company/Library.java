@@ -49,4 +49,24 @@ public class Library {
         }
     }
 
+    public void deleteBook(String bookTitle){
+        int indexCounter = 0;
+        boolean bookFound = false;
+
+        for (Book book: books) {
+            if(book != null && book.getTitle().equals(bookTitle)){
+                books[indexCounter] = null;
+                bookFound = true;
+            }
+            indexCounter++;
+        }
+
+        if(bookFound){
+            System.out.println("The book " + bookTitle + " was found and deleted from your library.");
+        } else {
+            System.out.println("Sorry, the book " + bookTitle + " was not found in your Library and therefore could not be deleted.");
+        }
+
+    }
+
 }

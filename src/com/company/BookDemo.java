@@ -25,7 +25,7 @@ public class BookDemo {
     }else if (userChoice == 2){
 
         messagePrompter.askForTitle();
-        userInput.next();
+        userInput.nextLine();
         String title = userInput.nextLine();
 
         messagePrompter.askForAuthor();
@@ -45,6 +45,12 @@ public class BookDemo {
     } else if (userChoice == 5){
 
     } else if (userChoice == 6){
+        userInput.nextLine();  //clearing buffer
+
+        messagePrompter.deleteBookPrompt();
+        String bookToDeleteByTitle = userInput.nextLine();
+
+        library.deleteBook(bookToDeleteByTitle);
 
     } else if (userChoice == 7){
         continueProgram = false;
