@@ -46,9 +46,56 @@ public class BookDemo {
 
     } else if (userChoice == 4){
 
-    } else if (userChoice == 5){
+        String updateTitleOption = "1";
+        String updateAuthorOption = "2";
+        String updateNumberOfPagesOption = "3";
+        boolean continueToUpdate = true;
 
-    } else if (userChoice == 6){
+        userInput.nextLine(); //clearing buffer
+
+        String bookToUpdateByTitle = messagePrompter.updatePromptForSearch();
+
+        do {
+            String bookPropertyToUpdate = messagePrompter.updateWhichPropertyPrompt();
+
+            if (bookPropertyToUpdate.equals(updateTitleOption)) {
+
+                    System.out.println("What is the new title?");
+                    String newTitle = userInput.nextLine();
+
+                    boolean updateSuccessful = library.updateTitle(bookToUpdateByTitle, newTitle );
+
+                    if(updateSuccessful){
+                        bookToUpdateByTitle = newTitle;
+                    }
+
+            } else if (bookPropertyToUpdate.equals(updateAuthorOption)) {
+                    userInput.nextLine(); // clear buffer
+
+                    System.out.println("What is the new authors name?");
+                    String newAuthorName = userInput.nextLine();
+
+                    library.updateAuthor(bookToUpdateByTitle, newAuthorName );
+
+            } else if (bookPropertyToUpdate.equals(updateNumberOfPagesOption)) {
+                    userInput.nextLine();  // clear buffer
+
+                System.out.println("What is the new page number?");
+                int updatedNumberOfPages = userInput.nextInt();
+
+                library.updateNumberOfPages(bookToUpdateByTitle, updatedNumberOfPages);
+            }
+
+            System.out.println("Would you like to make another update? [1] Yes  [2] No");
+            int userWantsMoreUpdates = userInput.nextInt();
+
+            if(userWantsMoreUpdates == 2){
+                continueToUpdate = false;
+            }
+
+            }while(continueToUpdate);
+
+    } else if (userChoice == 5){
         userInput.nextLine();  //clearing buffer
 
         messagePrompter.deleteBookPrompt();
@@ -56,7 +103,7 @@ public class BookDemo {
 
         library.deleteBook(bookToDeleteByTitle);
 
-    } else if (userChoice == 7){
+    } else if (userChoice == 6){
         continueProgram = false;
     } else {
         messagePrompter.invalidInputPrompt();

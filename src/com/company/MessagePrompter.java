@@ -1,14 +1,17 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class MessagePrompter {
 
+    private Scanner scanner2 = new Scanner(System.in);
     private String welcomePrompt = "Wud up? You know about books?";
     private String seeNumberOfBooksOption = "[1] See how many books I have";
     private String addBookOption = "[2] Add a book to my library";
     private String searchForBookOption = "[3] Search for a saved book";
     private String updateBookOption = "[4] Update a books information";
-    private String deleteBookOption = "[6] Delete a book";
-    private String exitPrompt = "[7] Exit";
+    private String deleteBookOption = "[5] Delete a book";
+    private String exitPrompt = "[6] Exit";
     private final String NEWLINE = "\n";
 
     public void showMenu(){
@@ -32,5 +35,15 @@ public class MessagePrompter {
 
     public void deleteBookPrompt(){
         System.out.println("What is the title of the book you would like to delete?");
+    }
+
+    public String updatePromptForSearch(){
+        System.out.println("What is the title of the book you would like to update?");
+        return scanner2.nextLine();
+    }
+
+    public String updateWhichPropertyPrompt(){
+        System.out.println("Update [1] Title, [2] Author, [3] Number Of Pages");
+        return scanner2.nextLine();
     }
 }
