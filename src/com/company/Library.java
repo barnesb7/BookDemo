@@ -69,4 +69,31 @@ public class Library {
 
     }
 
+    public void searchForBookByTitle(String bookTitle){
+
+        boolean bookFound = false;
+        String foundAuthor = "Anonymous";
+        int foundBookNumberOfPages = 0;
+
+        for (Book book: books) {
+            if(book != null && book.getTitle().equals(bookTitle)){
+
+                foundAuthor = book.getAuthor();
+                foundBookNumberOfPages = book.getNumberOfPages();
+                bookFound = true;
+            }
+        }
+
+        if(bookFound){
+            System.out.println("The book " + bookTitle + " was found in your library. It is by " + foundAuthor + " and has " + foundBookNumberOfPages + " pages. \n");
+        } else {
+            System.out.println("Sorry, the book " + bookTitle + " was not found in your Library. \n");
+        }
+
+    }
+
+
+
+
+
 }

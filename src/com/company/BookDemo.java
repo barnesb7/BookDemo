@@ -2,8 +2,6 @@ package com.company;
 
 import java.util.Scanner;
 
-// delete a book
-// searched for saved book
 // update a books information
 
 public class BookDemo {
@@ -39,6 +37,12 @@ public class BookDemo {
         library.addBookToBookShelf(newBook);
 
     } else if (userChoice == 3){
+        userInput.nextLine(); //clearing buffer
+
+        messagePrompter.askForTitle();
+        String bookToSearchFor = userInput.nextLine();
+
+        library.searchForBookByTitle(bookToSearchFor);
 
     } else if (userChoice == 4){
 

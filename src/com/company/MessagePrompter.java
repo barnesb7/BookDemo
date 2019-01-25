@@ -19,7 +19,7 @@ public class MessagePrompter {
     }
 
     public void askForTitle(){
-        System.out.println("What is your book's title?");
+        System.out.println("What is the book's title?");
     }
 
     public void askForAuthor(){
